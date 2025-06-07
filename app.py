@@ -14,12 +14,10 @@ class SimpleAgent:
 
 def main():
     st.title("Agentic AI System")
-    
-    # Initialize session state
+
     if 'messages' not in st.session_state:
         st.session_state.messages = []
     
-    # Try to import the real agent, fall back to simple one if it fails
     if 'team_agent' not in st.session_state:
         try:
             from agents.team_agent import TeamAgent
@@ -30,7 +28,6 @@ def main():
             st.info("Using simple test agent instead")
             st.session_state.team_agent = SimpleAgent()
     
-    # Display chat messages
     for message in st.session_state.messages:
         if message["role"] == "user":
             st.write(f"**You:** {message['content']}")
@@ -39,17 +36,14 @@ def main():
             if "agent" in message:
                 st.caption(f"Agent: {message['agent']}")
     
-    # Chat input
     user_input = st.chat_input("Type your message...")
     
     if user_input:
-        # Add user message
         st.session_state.messages.append({
             "role": "user", 
             "content": user_input
         })
         
-        # Get AI response
         try:
             result = st.session_state.team_agent.process(user_input)
             
@@ -74,7 +68,6 @@ def main():
                 "content": f"Error: {str(e)}"
             })
         
-        # Refresh to show new messages
         st.rerun()
 
 if __name__ == "__main__":
