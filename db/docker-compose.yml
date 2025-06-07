@@ -1,0 +1,23 @@
+services:
+  postgres:
+    image: postgres:15
+    restart: always
+    container_name: agentic_chat_db
+    environment:
+      POSTGRES_DB: agentic_chat
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    restart: always
+    container_name: agentic_chat_adminer
+    ports:
+      - "8080:8080"
+
+volumes:
+  postgres_data:

@@ -1,0 +1,16 @@
+streamlit
+psycopg2-binary
+sqlalchemy
+python-dotenv
+groq
+langchain
+langchain-groq
+pydantic
+typing-extensions
+httpx
+fastapi
+uvicorn
+python-jose
+python-multipart
+scikit-learn
+numpy

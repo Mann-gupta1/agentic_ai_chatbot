@@ -1,0 +1,10 @@
+__pycache__/
+venv/
+.env
+memory_store.pkl
+knowledge_base.pkl
+knowledge_base_advanced.pkl
+mcp_server/agents_db.json
+*.db
+.DS_Store
+Thumbs.db
