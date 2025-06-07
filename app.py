@@ -22,9 +22,9 @@ def main():
         try:
             from agents.team_agent import TeamAgent
             st.session_state.team_agent = TeamAgent()
-            st.success("✅ Team Agent loaded successfully")
+            st.success(" Team Agent loaded successfully")
         except Exception as e:
-            st.warning(f"⚠️ Could not load Team Agent: {str(e)}")
+            st.warning(f" Could not load Team Agent: {str(e)}")
             st.info("Using simple test agent instead")
             st.session_state.team_agent = SimpleAgent()
     
