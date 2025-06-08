@@ -1,6 +1,6 @@
 # Agentic AI System
 
-A multi-agent AI system with specialized agents for different types of tasks. Built for software professionals and tech enthusiasts.
+A multi-agent AI system with specialized agents for different types of tasks. 
 
 ## Features
 
